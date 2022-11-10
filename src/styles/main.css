@@ -1,0 +1,58 @@
+.event__block {
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.upcoming__event{
+    text-align: left;
+    color: black;
+    border-top: 1px solid black;
+    margin: 20px;
+}
+
+.upcoming__event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upcoming__event-header h1 {
+  color: #0f4c81;
+  font-size: 1.2rem;
+}
+
+.upcoming__event-header button {
+  background-color: #0f4c81;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  font-size: 0.7rem;
+  padding: 5px 10px;
+}
+
+.today p{
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+
+.card__event{
+    border-radius: 5px;
+    background: #FFE4C8;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card__title{
+    font-size: 1.5rem;
+    color: #0F4C81;
+    font-weight: 600;
+}
+
+.card__time{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}

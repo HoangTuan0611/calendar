@@ -3,6 +3,7 @@ import CardEvent from "./CardEvent";
 import Calendar from "react-calendar";
 import { events } from "../../data/fake-data";
 import dayjs from "dayjs";
+import "../../styles/main.css";
 
 const EventBlock = () => {
   const [date, setDate] = useState(new Date());
@@ -43,16 +44,15 @@ const EventBlock = () => {
     return resultD;
   }, [events]);
   return (
-    <>
+    <div className="event__block">
       <Calendar
         onChange={setDate}
         value={date}
-        tileContent={({ activeStartDate, date, view })=>{
-            if(eventD.find(item=>dayjs(item.from).format("DD")=== 11)){
-                return '1234';
-            }
+        tileContent={({ activeStartDate, date, view }) => {
+          if (eventD.find((item) => dayjs(item.from).format("DD") === 11)) {
+            return "1234";
+          }
         }}
-
         // tileContent={({ activeStartDate, date, view }) => {
         //   let _date = date.getDate();
         //   let _month = date.getMonth();
@@ -72,22 +72,19 @@ const EventBlock = () => {
         // showWeekNumbers
         onClickDay={(value) => setSelectedDate(value)}
       />
-      <div>
-        <div className="d-flex">
+      <div className="upcoming__event">
+        <div className="upcoming__event-header">
           <h1>Upcoming Event</h1>
           <button>View All</button>
         </div>
-        {/* {JSON.stringify(filteredEvent)} */}
-        <div>
-          <h4>Today, 4 Apr</h4>
+        <div className="today">
+          <p>Today, 4 Apr</p>
         </div>
-        <div>
-          {filteredEvent.map((item, index) => {
-            return <CardEvent key={index} item={item} />;
-          })}
-        </div>
+        {filteredEvent.map((item, index) => {
+          return <CardEvent key={index} item={item} />;
+        })}
       </div>
-    </>
+    </div>
   );
 };
 

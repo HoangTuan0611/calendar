@@ -1,5 +1,6 @@
 import React from "react";
 import dayjs from "dayjs";
+import "../../styles/main.css";
 
 const CardEvent = (props) => {
   const { item } = props;
@@ -8,23 +9,23 @@ const CardEvent = (props) => {
 
   if (item.type === 1) {
     return (
-      <>
-        <h1 className="card__title">{item.title}</h1>
+      <div className="card__event">
+        <span className="card__title">{item.title}</span>
         <h4 className="card__time">
           {dayjs(item.from).format("H:mm A Z")} -{" "}
           {dayjs(item.to).format("H:mm A Z")}
         </h4>
-      </>
+      </div>
     );
   }
   return (
-    <div>
-      <h1 className="card__title">{item.title}</h1>
+    <div className="card__event">
+      <span className="card__title">{item.title}</span>
       <h4 className="card__time">
         {dayjs(item.from).format("H:mm A Z")} -{" "}
         {dayjs(item.to).format("H:mm A Z")}
       </h4>
-      <div style={{ display: "flex", justifyContent:'space-between' }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="card__ava">
           <img style={{ width: "25%" }} src={item.avatar} alt="" />
         </div>
