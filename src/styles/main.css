@@ -1,14 +1,24 @@
+.main__content{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 20px 50px;
+}
+
+.event__block, .calendar__block{
+  background: white;
+  margin: 20px;
+}
+
 .event__block {
   display: flex;
   flex-direction: column;
-  background: white;
 }
 
-.upcoming__event{
-    text-align: left;
-    color: black;
-    border-top: 1px solid black;
-    margin: 20px;
+.upcoming__event {
+  text-align: left;
+  color: black;
+  border-top: 1px solid black;
+  margin: 20px;
 }
 
 .upcoming__event-header {
@@ -29,30 +39,68 @@
   border: none;
   font-size: 0.7rem;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
-.today p{
-    font-size: .9rem;
-    font-weight: 600;
+.today p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
 }
 
-
-.card__event{
-    border-radius: 5px;
-    background: #FFE4C8;
-    padding: 20px;
-    margin-bottom: 20px;
+.card__event {
+  border-radius: 5px;
+  background: #ffe4c8;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-.card__title{
-    font-size: 1.5rem;
-    color: #0F4C81;
-    font-weight: 600;
+.card__title {
+  font-size: 1.5rem;
+  color: #0F4C81;;
+  font-weight: 600;
+  margin: 5px 0px;
 }
 
-.card__time{
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0;
-    margin: 0;
+.card__time {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  color: #5684AE;
+}
+
+.card__ava {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card__ava img {
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
+  border-radius: 25px;
+}
+
+.card__ava a {
+  font-size: 0.8rem;
+  color: #5684AE;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.d-flex .icon{
+  border-radius: 25px;
+  background: #0F4C81;
+  padding: 7px 10px;
+}
+
+.d-flex .icon i{
+  color: white;
+  font-weight: 500;
 }

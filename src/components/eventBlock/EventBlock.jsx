@@ -78,7 +78,7 @@ const EventBlock = () => {
           <button>View All</button>
         </div>
         <div className="today">
-          <p>Today, 4 Apr</p>
+          <p>{date.toDateString()}</p>
         </div>
         {filteredEvent.map((item, index) => {
           return <CardEvent key={index} item={item} />;

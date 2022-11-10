@@ -1,6 +1,7 @@
 import React from "react";
 import dayjs from "dayjs";
 import "../../styles/main.css";
+import "remixicon/fonts/remixicon.css";
 
 const CardEvent = (props) => {
   const { item } = props;
@@ -10,7 +11,7 @@ const CardEvent = (props) => {
   if (item.type === 1) {
     return (
       <div className="card__event">
-        <span className="card__title">{item.title}</span>
+        <p className="card__title">{item.title}</p>
         <h4 className="card__time">
           {dayjs(item.from).format("H:mm A Z")} -{" "}
           {dayjs(item.to).format("H:mm A Z")}
@@ -20,18 +21,19 @@ const CardEvent = (props) => {
   }
   return (
     <div className="card__event">
-      <span className="card__title">{item.title}</span>
+      <div className="d-flex">
+        <p className="card__title">{item.title}</p>
+        <div className="icon">
+          <i class="ri-vidicon-line"></i>
+        </div>
+      </div>
       <h4 className="card__time">
         {dayjs(item.from).format("H:mm A Z")} -{" "}
         {dayjs(item.to).format("H:mm A Z")}
       </h4>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div className="card__ava">
-          <img style={{ width: "25%" }} src={item.avatar} alt="" />
-        </div>
-        <div>
-          <a href={item.link}>View Client Profile</a>
-        </div>
+      <div className="card__ava">
+        <img src={item.avatar} alt="" />
+        <a href={item.link}>View Client Profile</a>
       </div>
     </div>
   );

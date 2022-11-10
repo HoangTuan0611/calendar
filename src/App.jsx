@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div style={{ display: "flex", width: "100%", flexDirection: "row" }}>
+        <div className="main__content">
           <EventBlock />
           <Calendar />
         </div>
