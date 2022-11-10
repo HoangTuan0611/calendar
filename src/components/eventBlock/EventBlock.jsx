@@ -36,40 +36,11 @@ const EventBlock = () => {
   }, [selectedDate]);
   //console.log('asf',selectedDate);
 
-  const eventD = useMemo(() => {
-    let resultD = [];
-    events.forEach((item) => {
-      resultD.push(item.from);
-    });
-    return resultD;
-  }, [events]);
   return (
     <div className="event__block">
       <Calendar
         onChange={setDate}
         value={date}
-        tileContent={({ activeStartDate, date, view }) => {
-          if (eventD.find((item) => dayjs(item.from).format("DD") === 11)) {
-            return "1234";
-          }
-        }}
-        // tileContent={({ activeStartDate, date, view }) => {
-        //   let _date = date.getDate();
-        //   let _month = date.getMonth();
-        //   let _year = date.getFullYear();
-        //   events.forEach((item) => {
-        //     // if (
-        //     //   //   _year === dayjs(item.from).format("YY") &&
-        //     //   //   _month === dayjs(item.from).format("MM") &&
-        //     //   _date === dayjs(item.from).format("DD")
-        //     // ) {
-        //     //   return <p>It's Sunday!</p>;
-        //     // } else {
-        //     //   return <p>It's Sunday!</p>;
-        //     // }
-        //   });
-        // }}
-        // showWeekNumbers
         onClickDay={(value) => setSelectedDate(value)}
       />
       <div className="upcoming__event">
