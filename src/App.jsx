@@ -2,6 +2,7 @@ import "./App.css";
 import "./styles/main.css";
 import EventBlock from "./components/eventBlock/EventBlock";
 import Calendar from "./components/calendar/Calendar";
+// import 'react-calendar/dist/Calendar.css'
 
 function App() {
   return (

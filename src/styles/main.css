@@ -1,12 +1,25 @@
-.main__content{
+* {
+  --light-blue: #5684ae;
+  --dark-blue: #0f4c81;
+  --light-orange: #ffe4c8;
+  --dark-orange: #f9be81;
+  --calendar: #e4f6ed;
+  --white: #fff;
+  --black: #000;
+}
+
+.main__content {
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 20px 50px;
+  background: var(--light-blue);
 }
 
-.event__block, .calendar__block{
-  background: white;
+.event__block,
+.calendar__block {
+  background: var(--white);
   margin: 20px;
+  padding: 20px;
 }
 
 .event__block {
@@ -17,7 +30,7 @@
 .upcoming__event {
   text-align: left;
   color: black;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--black);
   margin: 20px;
 }
 
@@ -28,12 +41,12 @@
 }
 
 .upcoming__event-header h1 {
-  color: #0f4c81;
+  color: var(--dark-blue);
   font-size: 1.2rem;
 }
 
 .upcoming__event-header button {
-  background-color: #0f4c81;
+  background-color: var(--dark-blue);
   color: white;
   border-radius: 25px;
   border: none;
@@ -50,7 +63,7 @@
 
 .card__event {
   border-radius: 5px;
-  background: #ffe4c8;
+  background: var(--light-orange);
   padding: 20px;
   margin-bottom: 20px;
   cursor: pointer;
@@ -58,7 +71,7 @@
 
 .card__title {
   font-size: 1.5rem;
-  color: #0F4C81;;
+  color: var(--dark-blue);
   font-weight: 600;
   margin: 5px 0px;
 }
@@ -68,7 +81,7 @@
   font-weight: 500;
   padding: 0;
   margin: 0;
-  color: #5684AE;
+  color: var(--light-blue);
 }
 
 .card__ava {
@@ -86,21 +99,176 @@
 
 .card__ava a {
   font-size: 0.8rem;
-  color: #5684AE;
+  color: var(--light-blue);
 }
 
-.d-flex{
+.d-flex {
   display: flex;
   justify-content: space-between;
 }
 
-.d-flex .icon{
+.d-flex .icon {
   border-radius: 25px;
-  background: #0F4C81;
+  background: var(--dark-blue);
   padding: 7px 10px;
 }
 
-.d-flex .icon i{
+.d-flex .icon i {
   color: white;
   font-weight: 500;
+}
+
+/* css for calendar */
+
+.react-calendar {
+  max-width: 100%;
+  background: white;
+  border: 1px solid #a0a096;
+  line-height: 1.125em;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 1em;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.react-calendar__tile--active {
+  background: #006edc;
+  color: white;
+}
+
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 30px 7px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  border: none;
+}
+
+.react-calendar__tile--active {
+  background: #006edc !important;
+  color: white;
+}
+
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+}
+
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+}
+
+.react-calendar__navigation__label__labelText {
+  color: var(--dark-blue);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  color: var(--light-blue);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* css for content__events */
+.content__events {
+  text-align: left;
+}
+
+.content__events p {
+  background: var(--light-orange);
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+}
+
+.react-calendar__tile--active .content__events p {
+  color: var(--black);
+}
+
+@media only screen and (max-width: 575px) {
+  .main__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px 50px;
+    background: var(--white);
+  }
+
+  .event__block,
+  .calendar__block {
+    background: #dcffff;
+  }
+
+  .react-calendar {
+    background: #dcffff;
+  }
+
+  .react-calendar__navigation__label__labelText {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .react-calendar__month-view__weekdays__weekday {
+    font-size: 0.8rem;
+  }
+
+  .react-calendar__tile {
+    padding: 15px 5px;
+  }
+
+  /* css for card event */
+
+  .card__title {
+    font-size: 0.8rem;
+    color: var(--dark-blue);
+    font-weight: 600;
+    margin: 5px 0px;
+  }
+
+  .card__time {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    color: var(--light-blue);
+  }
+
+  .card__ava img {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    border-radius: 25px;
+  }
+  .card__ava a {
+    font-size: 0.7rem;
+    color: var(--light-blue);
+  }
 }

@@ -40,11 +40,11 @@ const Calendar = () => {
           //console.log("eventD title", eventD.title);
           console.log("_temp",_temp);
           return _temp && view === "month" ? (
-            <p>
+            <div className="content__events">
               {_temp.map((item) => {
                return <p> {item.title} </p>
               })}
-            </p>
+            </div>
           ) : null;
         }}
       />
