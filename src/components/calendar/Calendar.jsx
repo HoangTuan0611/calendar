@@ -41,8 +41,8 @@ const Calendar = () => {
           console.log("_temp",_temp);
           return _temp && view === "month" ? (
             <div className="content__events">
-              {_temp.map((item) => {
-               return <p> {item.title} </p>
+              {_temp.map((item, index) => {
+               return <p key={index}> {item.title} </p>
               })}
             </div>
           ) : null;
