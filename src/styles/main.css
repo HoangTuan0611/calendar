@@ -69,6 +69,29 @@
   cursor: pointer;
 }
 
+.card__event.blue-bg{
+  border-radius: 5px;
+  background: var(--light-blue);
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card__event.blue-bg .card__title {
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 600;
+  margin: 5px 0px;
+}
+
+.card__event.blue-bg .card__time {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  color: var(--white);
+}
+
 .card__title {
   font-size: 1.5rem;
   color: var(--dark-blue);
@@ -268,6 +291,33 @@
     border-radius: 25px;
   }
   .card__ava a {
+    font-size: 0.7rem;
+    color: var(--light-blue);
+  }
+
+  /* css for card event blue bg */
+  .card__event.blue-bg .card__title {
+    font-size: 0.8rem;
+    color: var(--white);
+    font-weight: 600;
+    margin: 5px 0px;
+  }
+
+  .card__event.blue-bg .card__time {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    color: var(--white);
+  }
+
+  .card__event.blue-bg .card__ava img {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    border-radius: 25px;
+  }
+  .card__event.blue-bg .card__ava a {
     font-size: 0.7rem;
     color: var(--light-blue);
   }

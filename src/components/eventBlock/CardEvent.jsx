@@ -10,7 +10,7 @@ const CardEvent = (props) => {
 
   if (item.type === 1) {
     return (
-      <div className="card__event">
+      <div className={`card__event ${item.type === 1 ? 'blue-bg' : ''}`}>
         <p className="card__title">{item.title}</p>
         <h4 className="card__time">
           {dayjs(item.from).format("H:mm A Z")} -{" "}
