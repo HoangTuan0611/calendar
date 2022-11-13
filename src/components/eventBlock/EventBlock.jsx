@@ -4,6 +4,7 @@ import Calendar from "react-calendar";
 import { events } from "../../data/fake-data";
 import dayjs from "dayjs";
 import "../../styles/main.css";
+import Format from "../../helper/Format";
 
 const EventBlock = () => {
   const [date, setDate] = useState(new Date());
@@ -11,15 +12,15 @@ const EventBlock = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const filteredEvent = useMemo(() => {
-    const dayformated = dayjs(selectedDate).format("D");
-    const monthformated = dayjs(selectedDate).format("MM");
-    const yearformated = dayjs(selectedDate).format("YY");
+    const dayformated = Format.formartD(selectedDate, "D");
+    const monthformated = Format.formartD(selectedDate, "MM");
+    const yearformated = Format.formartD(selectedDate, "YY");
 
     let resultArr = [];
     events.forEach((element) => {
-      let _day = dayjs(element.from).format("D");
-      let _month = dayjs(element.from).format("MM");
-      let _year = dayjs(element.from).format("YY");
+      let _day = Format.formartD(element.from, "D");
+      let _month = Format.formartD(element.from, "MM");
+      let _year = Format.formartD(element.from, "YY");
 
       if (
         _year === yearformated &&
@@ -31,7 +32,7 @@ const EventBlock = () => {
     });
     //console.log('date formated', dayformated);
 
-    console.log(resultArr);
+    //console.log(resultArr);
     return resultArr;
   }, [selectedDate]);
   //console.log('asf',selectedDate);

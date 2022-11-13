@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Calendar as CalendarComponent } from "react-calendar";
 import { events } from "../../data/fake-data";
 import dayjs from "dayjs";
+import Format from "../../helper/Format";
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
@@ -29,20 +30,17 @@ const Calendar = () => {
           const _temp = eventD.filter(
             // dayjs month return 1 -12, but getMonth() of JS language return 0 -11
             (item) =>
-              Number(dayjs(item.time).format("DD")) ===
+              Number(Format.formartD(item.time, "DD")) ===
                 Number(date.getDate()) &&
-              Number(dayjs(item.time).format("MM")) ===
+              Number(Format.formartD(item.time, "MM")) ===
                 Number(date.getMonth() + 1) &&
-              Number(dayjs(item.time).format("YYYY")) ===
+              Number(Format.formartD(item.time, "YYYY")) ===
                 Number(date.getFullYear())
           );
-          //console.log("_temp", Number(date.getMonth()));
-          //console.log("eventD title", eventD.title);
-          console.log("_temp",_temp);
           return _temp && view === "month" ? (
             <div className="content__events">
               {_temp.map((item, index) => {
-               return <p key={index}> {item.title} </p>
+                return <p key={index}> {item.title} </p>;
               })}
             </div>
           ) : null;
